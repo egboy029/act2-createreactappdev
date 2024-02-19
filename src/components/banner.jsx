@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-function Banner({ supportLink }) {
+function Banner({ isDarkMode, toggleDarkMode }) {
   return (
-    <div id="">
+    <div id="" className={isDarkMode ? "dark-mode" : "light-mode"}>
       <div id="" />
       <div>
         <a href="1" className="skipToContent_GxWn">
@@ -11,13 +11,17 @@ function Banner({ supportLink }) {
       </div>
       <div
         className="announcementBar_eRQg"
-        style={{ backgroundColor: '#20232a', color: '#fff' }}
+        style={{ backgroundColor: "#20232a", color: "#fff" }}
         role="banner"
       >
         <div className="announcementBarContent_hd8n">
-          Support Ukraine 🇺🇦 {''}
-          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/fundraisers/explore/search/charities/?query=ukraine">            
-          Help Provide Humanitarian Aid to Ukraine
+          Support Ukraine 🇺🇦 {""}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/fundraisers/explore/search/charities/?query=ukraine"
+          >
+            Help Provide Humanitarian Aid to Ukraine
           </a>
           .
         </div>
@@ -58,7 +62,10 @@ function Banner({ supportLink }) {
             </a>
           </div>
           <div className="navbar__items navbar__items--right">
-            <a className="navbar__item navbar__link" href="https://create-react-app.dev/docs/getting-started ">
+            <a
+              className="navbar__item navbar__link"
+              href="https://create-react-app.dev/docs/getting-started "
+            >
               Docs
             </a>
             <a
@@ -68,7 +75,6 @@ function Banner({ supportLink }) {
               className="navbar__item navbar__link"
             >
               <span>
-
                 Help
                 <svg
                   width="13.5"
@@ -83,7 +89,6 @@ function Banner({ supportLink }) {
                   />
                 </svg>
               </span>
-
             </a>
             <a
               href="https://github.com/facebook/create-react-app "
@@ -92,7 +97,6 @@ function Banner({ supportLink }) {
               className="navbar__item navbar__link"
             >
               <span>
-
                 GitHub
                 <svg
                   width="13.5"
@@ -109,26 +113,43 @@ function Banner({ supportLink }) {
               </span>
             </a>
 
-            <div className="toggle_hhh4 toggle_o8XW toggleDisabled_TXua">
+            <div
+              className="toggle_hhh4 toggle_o8XW toggleDisabled_TXua"
+              onClick={toggleDarkMode}
+            >
               <div className="toggleTrack_HbNd" role="button" tabIndex={-1}>
                 <div className="toggleTrackCheck_IT5z">
-                  <span className="toggleIcon_PY39">🌜</span>
+                  {isDarkMode ? (
+                    <span className="toggleIcon_PY39">🌜</span>
+                  ) : (
+                    <span className="toggleIcon_PY39">🌞</span>
+                  )}
                 </div>
                 <div className="toggleTrackX_scPi">
-                  <span className="toggleIcon_PY39">🌞</span>
+                  {isDarkMode ? (
+                    <span className="toggleIcon_PY39">🌞</span>
+                  ) : (
+                    <span className="toggleIcon_PY39">🌜</span>
+                  )}
                 </div>
                 <div className="toggleTrackThumb_K2k9" />
               </div>
-              <input
-                type="checkbox"
-                className="toggleScreenReader_ENkX"
-              />
+              <input type="checkbox" className="toggleScreenReader_ENkX" />
             </div>
 
             <div className="searchBox_9spw">
-              <button type="button" className="DocSearch DocSearch-Button" aria-label="Search">
+              <button
+                type="button"
+                className="DocSearch DocSearch-Button"
+                aria-label="Search"
+              >
                 <span className="DocSearch-Button-Container">
-                  <svg width={20} height={20} className="DocSearch-Search-Icon" viewBox="0 0 20 20">
+                  <svg
+                    width={20}
+                    height={20}
+                    className="DocSearch-Search-Icon"
+                    viewBox="0 0 20 20"
+                  >
                     <path
                       d="M14.386 14.386l4.0877 4.0877-4.0877-4.0877c-2.9418 2.9419-7.7115 2.9419-10.6533 0-2.9419-2.9418-2.9419-7.7115 0-10.6533 2.9418-2.9419 7.7115-2.9419 10.6533 0 2.9419 2.9418 2.9419 7.7115 0 10.6533z"
                       stroke="currentColor"
